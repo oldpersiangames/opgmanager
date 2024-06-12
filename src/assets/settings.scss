@@ -1,0 +1,10 @@
+@use 'vuetify/settings' with (
+  $typography: (
+    'body-2': (
+      'letter-spacing': normal
+    ),
+    'button': (
+      'letter-spacing': normal
+    )
+  )
+);
