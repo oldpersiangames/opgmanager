@@ -81,7 +81,21 @@ defineExpose({ loading, fetch });
                 </v-card-title>
 
                 <template v-slot:append>
-                  <v-btn color="primary" text="افزودن بازی" @click="form.games.push({})" />
+                  <v-btn
+                    color="primary"
+                    text="افزودن بازی"
+                    @click="
+                      form.games.push({
+                        title_en: '',
+                        title_fa: '',
+                        dubbed: false,
+                        modified: false,
+                        subtitle: false,
+                        iranian: false,
+                        collection: false
+                      })
+                    "
+                  />
                 </template>
               </v-card-item>
 
@@ -135,6 +149,12 @@ defineExpose({ loading, fetch });
                           label="زیرنویس"
                         />
                         <v-checkbox hide-details size="xs" v-model="game.iranian" label="ایرانی" />
+                        <v-checkbox
+                          hide-details
+                          size="xs"
+                          v-model="game.collection"
+                          label="مجموعه"
+                        />
                       </div>
                     </v-col>
                   </v-row>
