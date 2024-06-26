@@ -39,6 +39,17 @@ const router = createRouter({
         },
 
         {
+          path: '/lost-games',
+          children: [
+            {
+              path: '',
+              name: 'LostGamesIndex',
+              component: () => import('../pages/LostGamesIndex.vue')
+            },
+          ]
+        },
+
+        {
           path: "/tgfiles",
           component: () => import("../pages/TGFilesIndex.vue"),
           name: "TGFilesIndex",

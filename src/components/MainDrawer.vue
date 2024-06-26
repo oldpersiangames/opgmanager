@@ -8,6 +8,12 @@ const menuItems = [
     to: { name: 'HomePage' }
   },
   { title: 'بازی‌ها', icon: 'mdi-gamepad-variant', to: { name: 'GamesIndex' }, exact: false },
+  {
+    title: 'بازی‌های گمشده',
+    icon: 'mdi-gamepad-circle-down',
+    to: { name: 'LostGamesIndex' },
+    exact: false
+  },
   { title: 'فایل‌های تلگرام', icon: 'mdi-airplane', to: { name: 'TGFilesIndex' }, exact: false }
 ];
 
