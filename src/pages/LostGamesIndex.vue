@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { api } from '@/utils/axios';
+import { useHelper } from '@/composables/helper';
+
+const helper = useHelper();
 
 const lostGames = ref([]);
 const loading = ref(false);
+
+const fileInput = ref<Array<File>>([]);
 
 const filename = ref('');
 
@@ -20,14 +25,17 @@ fetch();
   <v-card>
     <v-card-text>
       <v-file-input
+        v-model="fileInput"
         accept="image/*"
-        label="آاپلود عکس"
+        label="آپلود عکس"
         multiple
         @update:model-value="
           async (files: Array<File>) => {
             await api.postForm('/api/admin/lost-games', {
               files: files
             });
+            fileInput = [];
+            helper.notify('آپلود شد');
             fetch();
           }
         "
