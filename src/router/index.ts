@@ -39,6 +39,27 @@ const router = createRouter({
         },
 
         {
+          path: '/companies',
+          children: [
+            {
+              path: '',
+              name: 'CompaniesIndex',
+              component: () => import('../pages/CompaniesIndex.vue')
+            },
+            {
+              path: "create",
+              component: () => import("../pages/CompaniesCreate.vue"),
+              name: "CompaniesCreate",
+            },
+            {
+              path: ':id(\\d+)/edit',
+              component: () => import("../pages/CompaniesEdit.vue"),
+              name: "CompaniesEdit",
+            },
+          ]
+        },
+
+        {
           path: '/lost-games',
           children: [
             {

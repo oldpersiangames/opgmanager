@@ -8,6 +8,7 @@ const menuItems = [
     to: { name: 'HomePage' }
   },
   { title: 'بازی‌ها', icon: 'mdi-gamepad-variant', to: { name: 'GamesIndex' }, exact: false },
+  { title: 'شرکت‌ها', icon: 'mdi-domain', to: { name: 'CompaniesIndex' }, exact: false },
   {
     title: 'بازی‌های گمشده',
     icon: 'mdi-gamepad-circle-down',
