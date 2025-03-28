@@ -279,7 +279,7 @@ defineExpose({ loading, fetch });
               :rules="[(val) => !!val || 'Field is required']"
               variant="outlined"
               density="comfortable"
-              :items="['Windows', 'PS1', 'PS2']"
+              :items="['Windows', 'PS1', 'PS2', 'Xbox 360']"
               multiple
               chips
               hide-details
